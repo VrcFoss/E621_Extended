@@ -1,0 +1,76 @@
+{
+  "manifest_version": 3,
+  "name": "E621+",
+  "version": "1.0.5",
+  "description": "Enhanced extension for E621.net with favorites management and advanced features",
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "vrcfoss@gmail.com",
+      "strict_min_version": "142.0",
+      "data_collection_permissions": {
+        "required": [
+          "none"
+        ],
+        "optional": []
+      }
+    }
+  },
+
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "downloads"
+  ],
+
+  "host_permissions": [
+    "https://e621.net/*",
+    "https://static1.e621.net/*",
+    "https://e926.net/*",
+    "https://static1.e926.net/*"
+  ],
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "assets/Images/Icons/icon-16.png",
+      "32": "assets/Images/Icons/icon-32.png",
+      "48": "assets/Images/Icons/icon-48.png",
+      "96": "assets/Images/Icons/icon-96.png",
+      "128": "assets/Images/Icons/icon-128.png"
+    }
+  },
+
+  "icons": {
+    "16": "assets/Images/Icons/icon-16.png",
+    "32": "assets/Images/Icons/icon-32.png",
+    "48": "assets/Images/Icons/icon-48.png",
+    "96": "assets/Images/Icons/icon-96.png",
+    "128": "assets/Images/Icons/icon-128.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://e621.net/*", "https://e926.net/*"],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
+  ],
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/Images/Icons/*.svg",
+        "assets/Images/Icons/*.png",
+        "assets/Sounds/*.mp3",
+        "assets/fonts/*.ttf"
+      ],
+      "matches": ["https://e621.net/*", "https://e926.net/*"]
+    }
+  ]
+}

@@ -1,0 +1,319 @@
+/* Container for tag/artist: heart after tag-list-count, pushed to the right */
+.tag-list-name.e621-has-heart,
+.tag-list-search.e621-has-heart,
+.tag-list-item.e621-has-heart {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+  flex: 1 !important;
+  min-width: 0 !important;
+}
+.tag-list-name.e621-has-heart .e621-heart,
+.tag-list-search.e621-has-heart .e621-heart,
+.tag-list-item.e621-has-heart .e621-heart {
+  margin-left: auto !important;
+  flex-shrink: 0;
+}
+
+.e621-heart {
+  transition: all 0.2s ease;
+}
+
+.e621-heart:hover {
+  transform: scale(1.3);
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.e621-heart img {
+  transition: all 0.2s ease;
+}
+
+.e621-search-heart {
+  transition: all 0.2s ease;
+}
+
+.e621-search-heart:hover {
+  transform: scale(1.3);
+  background: rgba(255, 0, 0, 0.1) !important;
+}
+
+.e621-search-heart img {
+  transition: all 0.2s ease;
+}
+
+.e621-download-container {
+  margin-top: 10px !important;
+  padding: 10px !important;
+  background: linear-gradient(135deg, #012e57 0%, #014995 100%) !important;
+  border-radius: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  border: 1px solid #014995 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+.e621-download-btn {
+  padding: 10px 20px !important;
+  background: #fcb328 !important;
+  color: #00254a !important;
+  border: none !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
+}
+
+.e621-download-btn:hover {
+  background: #ffc84d !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+.e621-download-btn:active {
+  transform: translateY(0) !important;
+}
+
+.e621-download-menu {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.e621-download-menu div:hover {
+  background: #014995 !important;
+}
+
+.e621-toast {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.e621-zoom-wrapper {
+  position: relative;
+  z-index: 10000;
+  transition: transform 0.3s ease;
+  transform-origin: center center;
+}
+
+/* Article that is the animated thumbnail (article.thumbnail / article.thumb): follow zoom scale */
+.e621-zoom-wrapper article.thumbnail[data-tags~="animated"],
+.e621-zoom-wrapper article.thumb[data-tags~="animated"] {
+  transform-origin: center center;
+  transition: transform 0.3s ease;
+}
+
+/* Vote buttons on individual post page - fixed bottom right, always on top */
+.e621-vote-buttons-container {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  z-index: 2147483647 !important;
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 10px !important;
+  pointer-events: auto !important;
+}
+.e621-vote-btn {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  border: none !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: rgba(1, 46, 87, 0.9) !important;
+  color: #fff !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+  transition: transform 0.2s ease, background 0.2s ease !important;
+}
+.e621-vote-btn:hover {
+  transform: scale(1.1) !important;
+  background: rgba(1, 73, 149, 0.95) !important;
+}
+.e621-vote-btn:active {
+  transform: scale(0.95) !important;
+}
+.e621-vote-btn svg {
+  flex-shrink: 0 !important;
+}
+/* Voted state: upvote green, downvote red */
+.e621-vote-up.e621-voted-up {
+  background: #227d2a !important;
+  color: #fff !important;
+}
+.e621-vote-down.e621-voted-down {
+  background: #4d0000 !important;
+  color: #fff !important;
+}
+.e621-vote-up.e621-voted-up:hover,
+.e621-vote-down.e621-voted-down:hover {
+  filter: brightness(1.1) !important;
+}
+/* Score between up/down vote buttons (from .ptbr-score) */
+.e621-vote-score {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 36px !important;
+  height: 44px !important;
+  padding: 0 8px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: var(--palette-neutral-inverted, #fff) !important;
+  background: rgba(1, 46, 87, 0.9) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+}
+.e621-vote-score.e621-score-positive {
+  color: #3e9e49 !important;
+}
+.e621-vote-score.e621-score-negative {
+  color: #e45f5f !important;
+}
+
+/* Fullscreen overlay for image/gif on post page (click on #image-container) */
+.e621-fullscreen-overlay {
+  box-sizing: border-box !important;
+  padding: 20px !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  z-index: 2147483646 !important;
+  background: rgba(0, 0, 0, 0.4) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  cursor: pointer !important;
+  animation: e621-fullscreen-overlay-in 0.25s ease-out forwards !important;
+  overflow: hidden !important;
+}
+.e621-fullscreen-content {
+  flex: 1 1 0 !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  height: 100% !important;
+  max-height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: default !important;
+  overflow: hidden !important;
+}
+.e621-fullscreen-overlay .e621-fullscreen-content img {
+  border-radius: 10px !important;
+  max-width: calc(100vw - 160px) !important;
+  max-height: calc(100vh - 80px) !important;
+  max-height: calc(100dvh - 80px) !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+  pointer-events: none !important;
+  animation: e621-fullscreen-img-in 0.3s ease-out 0.05s both !important;
+}
+.e621-fullscreen-nav {
+  flex-shrink: 0 !important;
+  padding: 12px 20px !important;
+  margin: 0 10px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #fff !important;
+  background: rgba(1, 46, 87, 0.9) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 8px !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  transition: background 0.2s ease, transform 0.2s ease !important;
+}
+.e621-fullscreen-nav:hover {
+  background: rgba(1, 73, 149, 0.95) !important;
+  transform: scale(1.05) !important;
+}
+.e621-fullscreen-prev {
+  order: 0 !important;
+}
+.e621-fullscreen-next {
+  order: 2 !important;
+}
+@keyframes e621-fullscreen-overlay-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes e621-fullscreen-img-in {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* PLEASEHELPME page: empty page with background video + music + white text */
+.e621-pleasehelpme-wrap {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 2147483647 !important;
+  overflow: hidden !important;
+  background: #000 !important;
+}
+.e621-pleasehelpme-video {
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  min-width: 100vw !important;
+  min-height: 100vh !important;
+  width: 100vw !important;
+  height: 56.25vw !important;
+  max-width: none !important;
+  max-height: none !important;
+  transform: translate(-50%, -50%) !important;
+  pointer-events: none !important;
+}
+@media (min-aspect-ratio: 16/9) {
+  .e621-pleasehelpme-video {
+    width: 177.78vh !important;
+    height: 100vh !important;
+  }
+}
+.e621-pleasehelpme-audio {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  left: -9999px !important;
+}
+.e621-pleasehelpme-text {
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  color: #fff !important;
+  font-size: clamp(24px, 6vw, 72px) !important;
+  font-weight: 700 !important;
+  text-align: center !important;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.8) !important;
+  white-space: nowrap !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+  font-family: 'October Crow', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
